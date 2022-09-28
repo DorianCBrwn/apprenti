@@ -1,18 +1,5 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
-import { Server } from 'socket.io';
-
-// Socket Plugin Configuration
-export const webSocketServer = {
-	name: 'webSocketServer',
-	configureServer(server) {
-		const io = new Server(server.httpServer);
-
-		io.on('connect', (socket) => {
-			socket.emit('eventFromServer', 'Hello World');
-		});
-	}
-};
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -25,10 +12,7 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
-		vite: {
-			plugins: [webSocketServer]
-		}
+		adapter: adapter()
 	}
 };
 

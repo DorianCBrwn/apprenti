@@ -1,5 +1,7 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a name="readme-top"></a>
+
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -16,6 +18,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![MIT License][license-shield]][license-url]
@@ -69,6 +72,7 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
@@ -77,22 +81,23 @@
 
 ### Built With
 
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Mongo][MongoDB]][MongoDB-url]
-* [![Socket][Socket.IO]][SocketIO-url]
-* [![Tailwind][TailwindCSS]][TailwindCss-url]
-* [![Vercel][Vercel]][Vercel-url]
+- [![Svelte][svelte.dev]][svelte-url]
+- [![Mongo][mongodb]][mongodb-url]
+- [![Socket][socket.io]][socketio-url]
+- [![Tailwind][tailwindcss]][tailwindcss-url]
+- [![Vercel][vercel]][vercel-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-* pnpm
+- pnpm
 
   ```sh
 
@@ -104,9 +109,9 @@ To get a local copy up and running follow these simple example steps.
 1. Get a free Cloudinary API Key at [https://cloudinary.com](https://cloudinary.com)
 2. Clone the repo
 
- ```sh
-   git clone https://github.com/DorianCBrwn/apprenti.git
- ```
+```sh
+  git clone https://github.com/DorianCBrwn/apprenti.git
+```
 
 3. Install NPM packages
 
@@ -117,8 +122,8 @@ To get a local copy up and running follow these simple example steps.
 4. Import socket in `svelte.config.js`
 
 ```js
-   // Import Socket from Socket.IO
-   import { Server } from 'socket.io';
+// Import Socket from Socket.IO
+import { Server } from 'socket.io';
 ```
 
 5. Create webSocket Server
@@ -126,21 +131,21 @@ To get a local copy up and running follow these simple example steps.
 ```js
 // Socket Plugin Configuration
 export const webSocketServer = {
- name: 'webSocketServer',
- configureServer(server) {
-  const io = new Server(server.httpServer);
+	name: 'webSocketServer',
+	configureServer(server) {
+		const io = new Server(server.httpServer);
 
-  io.on('connect', (socket) => {
-   socket.emit('eventFromServer', 'Hello World');
-  });
- }
+		io.on('connect', (socket) => {
+			socket.emit('eventFromServer', 'Hello World');
+		});
+	}
 };
-
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
@@ -150,17 +155,19 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Optimizations -->
+
 ## Optimizations
 
 The following are features I would love to implement if I had more time to work on this project.
 
-* [ ] Authentication
-* [ ] Export Expenses to CSV
-* [ ] Data visualizations
+- [ ] Authentication
+- [ ] Export Expenses to CSV
+- [ ] Data visualizations
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -168,6 +175,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
+
 ## Contact
 
 Dorian Brown - [@DorianCBrwn](https://twitter.com/@DorianCBrwn) - [me@dorianb.dev](mailto:me@dorianb.dev)
@@ -178,6 +186,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [forks-shield]: https://img.shields.io/github/forks/DorianCBrwn/Apprenti?color=%230492c2&style=for-the-badge
 [forks-url]: https://github.com/DorianCBrwn/apprenti/network/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
@@ -188,13 +197,13 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [linkedin-url]: https://www.linkedin.com/in/dorian-brown-dev/
 [twitter-shield]: https://img.shields.io/twitter/url?label=Twitter&logo=twitter&style=for-the-badge&url=https%3A%2F%2Ftwitter.com%2FDorianCBrwn
 [twitter-url]: https://twitter.com/DorianCBrwn
-[Svelte.dev]:  https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
-[MongoDB-url]: https://mongodb.com
-[Socket.IO]: https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101
-[SocketIO-url]: https://socket.io/
-[TailwindCSS]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
-[TailwindCSS-url]: https://socket.io/
-[Vercel]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
-[Vercel-url]: https://vercel.com/dashboard
+[svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[svelte-url]: https://svelte.dev/
+[mongodb]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
+[mongodb-url]: https://mongodb.com
+[socket.io]: https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101
+[socketio-url]: https://socket.io/
+[tailwindcss]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[tailwindcss-url]: https://socket.io/
+[vercel]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
+[vercel-url]: https://vercel.com/dashboard
