@@ -5,7 +5,7 @@ import { browser } from '$app/environment';
 
 export const useStorage = (key, defaultColumn) => {
 	const defaultValue = defaultColumn;
-	const data = browser ? localStorage.getItem(key) ?? defaultValue : defaultValue;
+	const data = browser ? JSON.parse(localStorage.getItem(key)) ?? defaultValue : defaultValue;
 
 	const store = writable(data, () => {
 		console.log('got a subscriber');
