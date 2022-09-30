@@ -58,6 +58,10 @@ export function deleteColumn(id) {
 	store.update((cols) => cols.filter((column) => column.id !== id));
 }
 
+/**
+ *
+ * @param {number} id
+ */
 export function update(id) {
 	store.update((cols) => {
 		return cols.map((col) => {

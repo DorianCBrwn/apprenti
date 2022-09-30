@@ -1,9 +1,11 @@
 <script>
-	import { addColumn, deleteColumn, store } from '$lib/stores/store';
 </script>
 
+<h1>Welcome to Apprenti</h1>
+
+<!--
 <section class="board grid">
-	<button on:click={() => addColumn()} />
+	<button class="btn btn-secondary w-fit  p-2" on:click={() => addColumn()}>&plus; Add Column</button>
 	{#each $store as column, idx (column.id)}
 		<div class="column grid-cols-3" id={column.id} {idx}>
 			<header>
@@ -38,7 +40,7 @@
 							</h2>
 							<p>If a dog chews shoes whose shoes does he choose?</p>
 							<div class="card-actions justify-end">
-								<button class="btn btn-primary">Buy Now</button>
+								<button class="btn btn-primary" on:click={() => addCard()}>Buy Now</button>
 							</div>
 						</div>
 					</div>
@@ -46,7 +48,6 @@
 			</article>
 		</div>
 	{/each}
-</section>
-
+</section> -->
 <style>
 </style>

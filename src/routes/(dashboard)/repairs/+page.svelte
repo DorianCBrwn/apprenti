@@ -1,7 +1,11 @@
 <script>
+	import Board from '$lib/components/Board.svelte';
+	import ColumnGrid from '$lib/components/ColumnGrid.svelte';
 </script>
 
-Kanban Board
+<Board>
+	<ColumnGrid />
+</Board>
 
 <style>
 	/* your styles go here */
