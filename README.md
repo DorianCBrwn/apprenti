@@ -123,7 +123,7 @@ To get a local copy up and running follow these simple example steps.
 
 ```js
 // Import Socket from Socket.IO
-import { Server } from 'socket.io';
+import { Server } from "socket.io";
 ```
 
 5. Create webSocket Server
@@ -131,14 +131,14 @@ import { Server } from 'socket.io';
 ```js
 // Socket Plugin Configuration
 export const webSocketServer = {
-	name: 'webSocketServer',
-	configureServer(server) {
-		const io = new Server(server.httpServer);
+  name: "webSocketServer",
+  configureServer(server) {
+    const io = new Server(server.httpServer);
 
-		io.on('connect', (socket) => {
-			socket.emit('eventFromServer', 'Hello World');
-		});
-	}
+    io.on("connect", (socket) => {
+      socket.emit("eventFromServer", "Hello World");
+    });
+  },
 };
 ```
 

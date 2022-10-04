@@ -1,8 +1,10 @@
 <script>
+  import Navbar from "$lib/components/Navbar.svelte";
+
 </script>
 
 <h1>Welcome to Apprenti</h1>
-
+<Navbar />
 <!--
 <section class="board grid">
 	<button class="btn btn-secondary w-fit  p-2" on:click={() => addColumn()}>&plus; Add Column</button>

@@ -1,5 +1,5 @@
-import { useStorage } from './persistentStore';
-import { v4 as uuidv4 } from 'uuid';
+import { useStorage } from "./persistentStore";
+import { v4 as uuidv4 } from "uuid";
 
 /**
  * @typedef Card
@@ -18,35 +18,35 @@ import { v4 as uuidv4 } from 'uuid';
 /** @param {Column[]} defaultColumns */
 
 const defaultColumns = [
-	{
-		id: 0,
-		title: 'Pending',
-		cards: []
-	},
-	{
-		id: 1,
-		title: 'In Progress',
-		cards: []
-	},
-	{
-		id: 2,
-		title: 'Complete',
-		cards: []
-	}
+  {
+    id: 0,
+    title: "Pending",
+    cards: [],
+  },
+  {
+    id: 1,
+    title: "In Progress",
+    cards: [],
+  },
+  {
+    id: 2,
+    title: "Complete",
+    cards: [],
+  },
 ];
 
 function getNewColumn() {
-	return {
-		id: uuidv4(),
-		title: 'Title',
-		cards: []
-	};
+  return {
+    id: uuidv4(),
+    title: "Title",
+    cards: [],
+  };
 }
 
-export const store = useStorage('store', defaultColumns);
+export const store = useStorage("store", defaultColumns);
 
 export function addColumn() {
-	store.update((prev) => [getNewColumn(), ...prev]);
+  store.update((prev) => [getNewColumn(), ...prev]);
 }
 
 /**
@@ -54,8 +54,8 @@ export function addColumn() {
  * @param {number} id
  */
 export function deleteColumn(id) {
-	console.log('column deleted');
-	store.update((cols) => cols.filter((column) => column.id !== id));
+  console.log("column deleted");
+  store.update((cols) => cols.filter((column) => column.id !== id));
 }
 
 /**
@@ -63,13 +63,13 @@ export function deleteColumn(id) {
  * @param {number} id
  */
 export function update(id) {
-	store.update((cols) => {
-		return cols.map((col) => {
-			if (col.id === id) {
-				return {
-					...col
-				};
-			} else return { ...col };
-		});
-	});
+  store.update((cols) => {
+    return cols.map((col) => {
+      if (col.id === id) {
+        return {
+          ...col,
+        };
+      } else return { ...col };
+    });
+  });
 }

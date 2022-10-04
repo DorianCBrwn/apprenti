@@ -1,11 +1,13 @@
 <script>
-	import { addColumn, deleteColumn } from '$lib/stores/store';
+  import { addColumn, deleteColumn } from "$lib/stores/store";
 </script>
 
-<button class="btn btn-secondary w-fit  p-2" on:click={() => addColumn()}>&plus; Add Column</button>
+<button class="btn btn-secondary w-fit  p-2" on:click={() => addColumn()}
+  >&plus;
+</button>
 <div
-	class="h-screen w-full overflow-x-auto flex flex-nowrap border border-yellow-500 border-4
+  class="flex h-screen w-full flex-nowrap overflow-x-auto border border-4 border-yellow-500
 "
 >
-	<slot><!-- optional fallback --></slot>
+  <slot><!-- optional fallback --></slot>
 </div>
