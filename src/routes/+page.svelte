@@ -1,55 +1,36 @@
 <script>
   import Navbar from "$lib/components/Navbar.svelte";
-
 </script>
 
-<h1>Welcome to Apprenti</h1>
 <Navbar />
-<!--
-<section class="board grid">
-	<button class="btn btn-secondary w-fit  p-2" on:click={() => addColumn()}>&plus; Add Column</button>
-	{#each $store as column, idx (column.id)}
-		<div class="column grid-cols-3" id={column.id} {idx}>
-			<header>
-				<h2>
-					<input bind:value={column.title} type="text" />
-				</h2>
-				<button class="btn gap-2" on:click={() => deleteColumn(column.id)}>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="1.5"
-						stroke="currentColor"
-						class="w-6 h-6"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
-						/>
-					</svg>
-					Remove Column
-				</button>
-			</header>
-			<button class="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg">&plus; Add Card</button>
-			<article>
-				{#each column.cards as card, cardIdx (card.id)}
-					<div class="card w-96 bg-base-100 shadow-xl">
-						<div class="card-body">
-							<h2 class="card-title">
-								<input type="text" bind:value={column.cards[cardIdx].title} />
-							</h2>
-							<p>If a dog chews shoes whose shoes does he choose?</p>
-							<div class="card-actions justify-end">
-								<button class="btn btn-primary" on:click={() => addCard()}>Buy Now</button>
-							</div>
-						</div>
-					</div>
-				{/each}
-			</article>
-		</div>
-	{/each}
-</section> -->
-<style>
-</style>
+
+<div class="hero min-h-screen bg-base-200">
+  <div class="hero-content flex-col lg:flex-row-reverse">
+    <div class="text-center lg:text-left">
+      <h1 class="text-5xl font-bold">Login now!</h1>
+      <p class="py-6">Wecome to Apprenti</p>
+    </div>
+    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div class="card-body">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Email</span>
+          </label>
+          <input type="text" placeholder="email" class="input input-bordered" />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Password</span>
+          </label>
+          <input type="text" placeholder="password" class="input input-bordered" />
+          <label class="label">
+            <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+          </label>
+        </div>
+        <div class="form-control mt-6">
+          <button class="btn btn-primary">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

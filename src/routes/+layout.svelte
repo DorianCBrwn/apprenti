@@ -2,18 +2,8 @@
   import "../app.postcss";
 </script>
 
-  <slot />
-<footer class="text-center bg-neutral">
-  &copy; Dorian Brown {new Date().getFullYear()}
-</footer>
+<slot />
 
-<style>
-  :global(body) {
-    min-height: 100vh;
-    display: grid;
-    grid-template: 1fr auto / minmax(0, 1fr);
-  }
-  footer {
-    padding: var(--sm);
-  }
-</style>
+<!-- <footer class="fixed bottom-0 w-full bg-neutral text-center ">
+  &copy; Dorian Brown {new Date().getFullYear()}
+</footer> -->

@@ -6,17 +6,12 @@
 <svg
   data-v-fde0c5aa=""
   xmlns="http://www.w3.org/2000/svg"
+  {height}
+  {width}
   viewBox="0 0 300 300"
   class="iconAbove"
-  ><!----><defs data-v-fde0c5aa=""><!----></defs><rect
-    data-v-fde0c5aa=""
-    fill="transparent"
-    x="0"
-    y="0"
-    {width}
-    {height}
-    class="logo-background-square"
-  /><defs data-v-fde0c5aa=""><!----></defs><g
+  ><!----><defs data-v-fde0c5aa=""><!----></defs>
+  <defs data-v-fde0c5aa=""><!----></defs><g
     data-v-fde0c5aa=""
     id="3e7d12e4-b1da-4b5b-a82a-b07b09a493a4"
     fill="#000000"

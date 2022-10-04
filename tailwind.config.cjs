@@ -2,10 +2,13 @@ const config = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
 
   theme: {
+    fontFamily: {
+      sansSerif: ["Source Sans Pro"],
+      mono: ["Source Code Pro"],
+      handwriting: ["Kalam", "cursive"],
+    },
     extend: {
-      backgroundImage: {
-        circle: "url(/circle.svg)",
-      },
+      backgroundImage: { circle: "url('/circle.svg')" },
       borderWidth: {
         1: "1px",
       },
@@ -15,7 +18,13 @@ const config = {
         tableRow: "0px 0px 6px rba(0, 0, 0, 0.16)",
       },
       gridTemplateColumns: {
-        invoiceTable: "100px 100px 1fr 116px 32px 32px",
+        invoiceTable: "100px 100px 1fr 116px 1fr 32px 32px",
+        invoiceTableMobile: "1fr 90px",
+        repairBoard: "100px 1fr",
+      },
+      zIndex: {
+        navBarToggle: 91,
+        navBar: 90,
       },
     },
   },

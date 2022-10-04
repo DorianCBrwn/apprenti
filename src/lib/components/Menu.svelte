@@ -44,10 +44,10 @@
   }
 
   nav ul li a {
-    @apply px-10 font-bold text-white hover:text-yellow-300;
+    @apply px-10 font-bold text-white hover:text-primary;
   }
 
   nav ul li a.active {
-    background: url("/default-monochrome-black.svg") left top no-repeat;
+    background: url("/arrowLogo.svg") left top no-repeat;
   }
 </style>

@@ -7,14 +7,15 @@
     | "late"
     | "paid"
     | "archived" = "draft";
+  export let className = "";
 </script>
 
 <div
-  class="text-md fond-bold w-20 rounded-full text-center capitalize "
+  class={`text-md fond-bold w-20 rounded-full text-center capitalize ${className}`}
   class:info={label === "draft"}
   class:success={label === "sent" || label === "current"}
   class:alert={label === "late"}
-  class:archive={label === "paid" || label === "archived"}
+  class:archive={label === "paid"}
 >
   {label}
 </div>
@@ -30,7 +31,7 @@
   }
 
   .alert {
-    @apply border-error bg-error text-error-content;
+    @apply justify-center border-error bg-error p-0 text-center text-error-content;
   }
 
   .archive {
