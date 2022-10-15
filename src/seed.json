@@ -1,0 +1,72 @@
+{
+    "invoices": [
+        {
+            "vendor": {
+                "vendorStatus": "active",
+                "city": "New York",
+                "email": "PlumingPlumber@plumber.com",
+                "id": "1",
+                "name": "PlumingPlumber",
+                "state": "NY",
+                "street": "123 Main Street",
+                "zip": "12345"
+            },
+            "createdAt": "2022-10-10",
+            "dueDate": "2022-11-10",
+            "id": "1",
+            "invoiceNumber": "12345",
+            "invoiceStatus": "draft",
+            "lineItems": [
+                {
+                    "amount": 1235,
+                    "repairDescription": "Replace Sink",
+                    "id": "1",
+                    "quantity": "1"
+                },
+                {
+                    "amount": 500,
+                    "repairDescription": "Fix leaky pipe",
+                    "id": "2",
+                    "quantity": "1"
+                }
+            ],
+            "notes": "**The Sink was on sale**",
+            "subject": "Lower Cost Sink",
+            "terms": "_sale_"
+        },
+        {
+            "vendor": {
+                "vendorStatus": "active",
+                "city": "New York",
+                "email": "PlumingPlumber@plumber.com",
+                "id": "1",
+                "name": "PlumingPlumber",
+                "state": "NY",
+                "street": "123 Main Street",
+                "zip": "12345"
+            },
+            "createdAt": "2022-12-12",
+            "dueDate": "2022-11-10",
+            "id": "2",
+            "invoiceNumber": "12345",
+            "invoiceStatus": "draft",
+            "lineItems": [
+                {
+                    "amount": 1235,
+                    "repairDescription": "Replace Sink",
+                    "id": "3",
+                    "quantity": "1"
+                },
+                {
+                    "amount": 500,
+                    "repairDescription": "Fix leaky pipe",
+                    "id": "4",
+                    "quantity": "1"
+                }
+            ],
+            "notes": "**The Sink was on sale**",
+            "subject": "Lower Cost Sink",
+            "terms": "_sale_"
+        }
+    ]
+}
