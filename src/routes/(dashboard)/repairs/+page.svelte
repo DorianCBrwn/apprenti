@@ -3,4 +3,8 @@
   import ColumnContainer from "$lib/components/ColumnContainer.svelte";
 </script>
 
+<Board>
+
   <ColumnContainer />
+
+</Board>

@@ -1,18 +1,23 @@
 <script>
-  import { store } from "$lib/stores/store";
+  import { addColumn, store } from "$lib/stores/store";
   import Column from "./Column.svelte";
 </script>
-<div class="flex flex-start h-full w-full flex-nowrap my-8">
+<div class="flex flex-start w-full justify-between  flex-nowrap rounded-lg my-8 gap-6">
 
     {#each $store as column, idx (column.id)}
       <section
-        class="grid grid-cols-4  grid-flow-row auto-rows-fr h-full  content-start items-start border border-slate-400 bg-neutral"
+        class="bg-base-300 flex flex-col space-between px-2  shrink rounded-md p-4 max-w-full "
         id={column.id}
         {idx}
       >
         <Column {column} {idx} />
       </section>
     {/each}
+
+
+
 </div>
 
-  <!-- class="flex w-full flex-nowrap justify-between overflow-x-auto border border-2 border-red-300" -->
+  <style>
+
+  </style>
