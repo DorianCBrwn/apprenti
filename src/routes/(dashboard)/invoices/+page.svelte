@@ -28,7 +28,8 @@
   <div class=" table-header  hidden lg:grid invoice-table text-primary ">
     <h3>Status</h3>
     <h3>Date</h3>
-    <h3>Company</h3>
+    <h3>ID</h3>
+    <h3 class="text-center">Company</h3>
     <h3>Amount</h3>
     <h3>Repair</h3>
     <div />
@@ -44,8 +45,9 @@
       <Tag label="late" className="ml-auto lg:ml-0" />
     </div>
     <div class="dueDate text-sm lg:text-lg">9/22/22</div>
-    <div class="companyName text-base lg:text-lg font-bold">Awesome Plumbing.co</div>
-    <div class="amount text-right font-mono text-sm lg:text-lg font-bold">$503.12</div>
+    <div class="invoiceNumber text-sm lg:text-lg">12345</div>
+    <div class="companyName text-base lg:text-lg font-bold text-center">Awesome Plumbing.co</div>
+    <div class="amount font-mono text-sm lg:text-lg font-bold">$503.12</div>
     <div class="repairDescription text-sm lg:text-lg font-bold">Sink replacement</div>
     <div class="center viewButton hidden text-sm lg:text-lg lg:block">
       <a href="#" class="hover:text-primary"><ViewIcon /></a>
@@ -65,13 +67,16 @@
 
   .invoice-row {
     grid-template-areas:
-      "repairDescription repairDescription"
+      "invoiceNumber  repairDescription"
       "companyName amount"
       "dueDate status";
   }
-
   .invoice-row .status {
     grid-area: status;
+  }
+
+  .invoice-row .invoiceNumber{
+    grid-area: invoiceNumber;
   }
 
   .invoice-row .dueDate {
@@ -96,7 +101,7 @@
 
   @media(min-width: 1024px) {
     .invoice-row {
-      grid-template-areas: "status dueDate companyName amount repairDescription viewButton moreButton";
+      grid-template-areas: "status dueDate invoiceNumber companyName amount repairDescription viewButton moreButton";
     }
   }
 
