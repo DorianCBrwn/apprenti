@@ -1,8 +1,8 @@
 <script>
   import { store, deleteColumn } from "$lib/stores/store";
-  import Cards from "./Cards.svelte";
+  import Cards from "../../routes/(dashboard)/repairs/Cards.svelte";
   import { v4 as uuidv4 } from "uuid";
-  import CloseIcon from './icons/CloseIcon.svelte';
+  import CloseIcon from "./icons/CloseIcon.svelte";
 
   export let column;
   export let idx;
@@ -24,12 +24,16 @@
   }
 </script>
 
-  <button class="btn btn-secondary" on:click={() => deleteColumn(column.id)}>
-    <CloseIcon />
-  </button>
-<header >
+<button class="btn btn-secondary" on:click={() => deleteColumn(column.id)}>
+  <CloseIcon />
+</button>
+<header>
   <h2>
-    <input bind:value={column.title} type="text" class="  input input-primary w-full text-center text-lg my-10 py-8"/>
+    <input
+      bind:value={column.title}
+      type="text"
+      class="  input input-primary w-full text-center text-lg my-10 py-8"
+    />
   </h2>
 </header>
 <button
@@ -40,7 +44,7 @@
 
 <!-- markup (zero or more items) goes here -->
 <style>
-header h2 input{
+  header h2 input {
     background: url("/wrench.svg") left no-repeat;
-}
+  }
 </style>
