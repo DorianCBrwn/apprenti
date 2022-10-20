@@ -1,23 +1,8 @@
 import { useStorage } from "./persistentStore";
 import { v4 as uuidv4 } from "uuid";
 
-/**
- * @typedef Card
- * @type {Array<T>}
- *
- */
 
-/**
- *@typedef Column
- *@type {object}
- *@property {number} id
- *@property {string} title
- *@property {Card[]} cards
- */
-
-/** @param {Column[]} defaultColumns */
-
-const defaultColumns = [
+const defaultColumns: Column[] = [
   {
     id: 0,
     title: "Pending",
