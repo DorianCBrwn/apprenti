@@ -15,17 +15,18 @@
             "dueDate": "2022-11-10",
             "id": "1",
             "invoiceNumber": "12345",
+            "repairDescription": "Replace Sink",
             "invoiceStatus": "draft",
             "lineItems": [
                 {
                     "amount": 1235,
-                    "repairDescription": "Replace Sink",
+                    "description": " sink basin",
                     "id": "1",
                     "quantity": "1"
                 },
                 {
                     "amount": 500,
-                    "repairDescription": "Fix leaky pipe",
+                    "description": "pipe",
                     "id": "2",
                     "quantity": "1"
                 }
@@ -49,17 +50,18 @@
             "dueDate": "2022-12-20",
             "id": "3",
             "invoiceNumber": "56389",
+            "repairDescription": "Install new Toliet",
             "invoiceStatus": "late",
             "lineItems": [
                 {
                     "amount": 5000,
-                    "repairDescription": "Install Shower",
+                    "description": "japanese toilet",
                     "id": "4",
                     "quantity": "1"
                 },
                 {
                     "amount": 29,
-                    "repairDescription": "Unclog Toliet",
+                    "description": "Unclog Toliet",
                     "id": "5",
                     "quantity": "1"
                 }
@@ -83,17 +85,18 @@
             "dueDate": "2020-12-20",
             "id": "3",
             "invoiceNumber": "66389",
+            "repairDescription": "Update electrical fixtures",
             "invoiceStatus": "paid",
             "lineItems": [
                 {
                     "amount": 500,
-                    "repairDescription": "Install light fixtures",
+                    "description": "light fixtures",
                     "id": "5",
                     "quantity": "10"
                 },
                 {
                     "amount": 2900,
-                    "repairDescription": "Install Charger",
+                    "description": "Charger",
                     "id": "6",
                     "quantity": "1"
                 }
