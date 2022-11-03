@@ -45,7 +45,7 @@
   </div>
 
   <!-- Repairs -->
-  #{#each $invoices as invoice}
+  {#each $invoices as invoice}
     <InvoiceRow {invoice} />
   {/each}
 </div>

@@ -3,7 +3,7 @@
   import ViewIcon from "$lib/components/icons/ViewIcon.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import { centsToDollars, sumLineItems } from "$lib/utils/moneyHelper";
-
+  import { formatDate } from "$lib/utils/dateHelpers";
   export let invoice: Invoice;
 </script>
 
@@ -13,7 +13,7 @@
   <div class="status text-lg">
     <Tag label={invoice.invoiceStatus} className="ml-auto lg:ml-0" />
   </div>
-  <div class="dueDate text-sm lg:text-lg">{invoice.dueDate}</div>
+  <div class="dueDate text-sm lg:text-lg">{formatDate(invoice.dueDate)}</div>
   <div class="invoiceNumber text-sm lg:text-lg">{invoice.invoiceNumber}</div>
   <div
     class="companyName text-base lg:text-lg font-bold text-center whitespace-nowrap truncate"
