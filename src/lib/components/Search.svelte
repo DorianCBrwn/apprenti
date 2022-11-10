@@ -11,9 +11,9 @@
   <input
     type="text"
     placeholder="Search"
-    class="w-full md:w-[14rem] lg:w-72  border-b-2 border-dashed border-slate-300
-         bg-transparent text-base lg:text-xl text-black outline-none focus:border-solid focus:border-b-blue-400"
+    class="w-full border-b-2 border-dashed  border-slate-300 bg-transparent text-base
+         text-black outline-none focus:border-solid focus:border-b-blue-400 md:w-[14rem] lg:w-72 lg:text-xl"
   />
 
-  <button class="btn btn-sm btn-ghost md:btn-md lg:btn-lg ">Search</button>
+  <button class="btn btn-ghost btn-sm md:btn-md lg:btn-lg ">Search</button>
 </div>

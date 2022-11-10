@@ -27,8 +27,10 @@
   class="fixed z-navBar h-screen w-full -translate-x-full bg-base-300 text-center transition-transform md:relative md:col-span-3 md:h-full md:translate-x-0"
   class:translate-x-0={open}
 >
-  <div class="my-10 md:my-24
-  ">
+  <div
+    class="my-10 md:my-24
+  "
+  >
     <a href="/" class="center">
       <Logo />
     </a>

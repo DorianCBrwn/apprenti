@@ -1,5 +1,6 @@
 <script lang="ts">
   import { invoices, loadInvoices } from "$lib/stores/InvoiceStore";
+  import { centsToDollars, sumInvoices } from "$lib/utils/moneyHelper";
   import { onMount } from "svelte";
   import CircledAmount from "$lib/components/CircledAmount.svelte";
   import Search from "$lib/components/Search.svelte";
@@ -17,7 +18,7 @@
 </svelte:head>
 
 <div
-  class=" mb-7 gap-y-6  md:gap-y-4 lg:mb-16 flex flex-col-reverse items-start md:flex-row md:items-center justify-between "
+  class=" mb-7 flex  flex-col-reverse items-start justify-between gap-y-6 md:flex-row md:items-center md:gap-y-4 lg:mb-16 "
 >
   <!-- Search Field  -->
   <Search />
@@ -25,7 +26,7 @@
   <!-- Invoice button -->
   <div>
     <button
-      class="btn btn-sm md:btn-md lg:btn-lg btn-primary translate-y-0  transition-all hover:-translate-y-2 whitespace-nowrap"
+      class="btn btn-primary btn-sm translate-y-0 whitespace-nowrap transition-all  hover:-translate-y-2 md:btn-md lg:btn-lg"
       >&plus; Invoice</button
     >
   </div>
@@ -33,7 +34,7 @@
 
 <div>
   <!-- Table Header-->
-  <div class=" table-header  hidden lg:grid invoice-table text-primary ">
+  <div class=" table-header  invoice-table hidden text-primary lg:grid ">
     <h3>Status</h3>
     <h3>Date</h3>
     <h3>ID</h3>
@@ -49,7 +50,7 @@
     <InvoiceRow {invoice} />
   {/each}
 </div>
-<CircledAmount label="Total" amount="1,2405.00" />
+<CircledAmount label="Total" amount={centsToDollars(sumInvoices($invoices))} />
 
 <style lang="postcss">
   .table-header h3 {

@@ -1,13 +1,11 @@
 import { writable } from "svelte/store";
 import { browser } from "$app/environment";
-import type { Writable } from "svelte/store"
+import type { Writable } from "svelte/store";
 
 export const useStorage = (key: string, defaultColumn: Column[]) => {
-
-
   const defaultValue = defaultColumn;
   const data = browser
-    ? JSON.parse(localStorage.getItem(key) || '') ?? defaultValue
+    ? JSON.parse(localStorage.getItem(key) || "") ?? defaultValue
     : defaultValue;
 
   const store: Writable<Column[]> = writable<Column[]>(data, () => {

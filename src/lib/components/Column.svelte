@@ -32,7 +32,7 @@
     <input
       bind:value={column.title}
       type="text"
-      class="  input input-primary w-full text-center text-lg my-10 py-8"
+      class="  input input-primary my-10 w-full py-8 text-center text-lg"
     />
   </h2>
 </header>

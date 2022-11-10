@@ -3,21 +3,18 @@
 </script>
 
 <menu class="flex  flex-nowrap justify-end ">
-
-  <button class="btn btn-secondary btn-small" on:click={() => addColumn()}
-      >&plus Add New Column;
-    </button>
-    <button class="btn btn-primary btn-small">view</button>
+  <button class="btn-small btn btn-secondary" on:click={() => addColumn()}
+    >&plus Add New Column;
+  </button>
+  <button class="btn-small btn btn-primary">view</button>
 </menu>
 
-<div class="flex flex-nowrap w-full">
-
-    <slot><!-- optional fallback --></slot>
-
+<div class="flex w-full flex-nowrap">
+  <slot><!-- optional fallback --></slot>
 </div>
 
 <style lang="postcss">
-  button{
+  button {
     @apply mr-4;
   }
 </style>

@@ -13,7 +13,7 @@
   }
 </script>
 
-<div class="card w-80 h-80 bg-base-100 shadow-xl my-8">
+<div class="card my-8 h-80 w-80 bg-base-100 shadow-xl">
   <div class="card-body">
     <h2 class="card-title">
       <input type="text" bind:value={card.title} />

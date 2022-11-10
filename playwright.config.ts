@@ -6,7 +6,7 @@ const config: PlaywrightTestConfig = {
     port: 4173,
   },
   // Add testMatch here
-  testMatch: 'tests/**/*.js',
+  testMatch: "tests/**/*.js",
 };
 
 export default config;

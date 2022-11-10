@@ -3,35 +3,47 @@
   import ViewIcon from "$lib/components/icons/ViewIcon.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import { centsToDollars, sumLineItems } from "$lib/utils/moneyHelper";
-  import { formatDate } from "$lib/utils/dateHelpers";
+  import { formatDate, isLate } from "$lib/utils/dateHelpers";
   export let invoice: Invoice;
+
+  const getInvoiceLabel = () => {
+    if (invoice.invoiceStatus === "draft") {
+      return "draft";
+    } else if (invoice.invoiceStatus === "sent" && !isLate(invoice.dueDate)) {
+      return "sent";
+    } else if (invoice.invoiceStatus === "sent" && isLate(invoice.dueDate)) {
+      return "late";
+    } else if (invoice.invoiceStatus === "paid") {
+      return "paid";
+    }
+  };
 </script>
 
 <div
-  class="invoice-table invoice-row items-center rounded-lg bg-base-200 py-3 lg:py-6 shadow-tableRow"
+  class="invoice-table invoice-row items-center rounded-lg bg-base-200 py-3 shadow-tableRow lg:py-6"
 >
   <div class="status text-lg">
-    <Tag label={invoice.invoiceStatus} className="ml-auto lg:ml-0" />
+    <Tag label={getInvoiceLabel()} className="ml-auto lg:ml-0" />
   </div>
   <div class="dueDate text-sm lg:text-lg">{formatDate(invoice.dueDate)}</div>
   <div class="invoiceNumber text-sm lg:text-lg">{invoice.invoiceNumber}</div>
   <div
-    class="companyName text-base lg:text-lg font-bold text-center whitespace-nowrap truncate"
+    class="companyName truncate whitespace-nowrap text-center text-base font-bold lg:text-lg"
   >
     {invoice.vendor.name}
   </div>
-  <div class="amount font-mono text-sm lg:text-lg font-bold">
+  <div class="amount font-mono text-sm font-bold lg:text-lg">
     ${centsToDollars(sumLineItems(invoice.lineItems))}
   </div>
   <div
-    class="repairDescription text-sm lg:text-lg font-bold whitespace-nowrap truncate"
+    class="repairDescription truncate whitespace-nowrap text-sm font-bold lg:text-lg"
   >
     {invoice.repairDescription}
   </div>
-  <div class="center viewButton hidden text-sm lg:text-lg lg:block">
+  <div class="center viewButton hidden text-sm lg:block lg:text-lg">
     <a href="#" class="hover:text-primary"><ViewIcon /></a>
   </div>
-  <div class="center moreButton hidden text-sm lg:text-lg lg:block">
+  <div class="center moreButton hidden text-sm lg:block lg:text-lg">
     <button class="hover:text-primary"><MoreIcon /></button>
   </div>
 </div>

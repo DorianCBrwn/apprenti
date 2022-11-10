@@ -1,10 +1,10 @@
 export enum InvoiceStatus {
-    draft = 'draft',
-    sent = 'sent',
-    paid = 'paid',
+  draft = "draft",
+  sent = "sent",
+  paid = "paid",
 }
 
 export enum VendorStatus {
-    active = 'active',
-    archived = 'archived'
+  active = "active",
+  archived = "archived",
 }

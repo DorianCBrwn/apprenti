@@ -1,7 +1,6 @@
 import { useStorage } from "./persistentStore";
 import { v4 as uuidv4 } from "uuid";
 
-
 const defaultColumns: Column[] = [
   {
     id: 0,
