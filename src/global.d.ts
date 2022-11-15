@@ -4,7 +4,6 @@ interface Invoice {
   id: string;
   invoiceNumber: string;
   invoiceStatus: InvoicesStatus;
-  issueDate: string;
   lineItems?: lineItem[];
   notes?: string;
   repairDescription: string;
