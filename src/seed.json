@@ -19,13 +19,13 @@
       "invoiceStatus": "draft",
       "lineItems": [
         {
-          "amount": 1235,
+          "amount": 123555,
           "description": " sink basin",
           "id": "1",
           "quantity": "1"
         },
         {
-          "amount": 500,
+          "amount": 50012,
           "description": "pipe",
           "id": "2",
           "quantity": "1"
@@ -54,13 +54,13 @@
       "invoiceStatus": "late",
       "lineItems": [
         {
-          "amount": 5000,
+          "amount": 500010,
           "description": "japanese toilet",
           "id": "4",
           "quantity": "1"
         },
         {
-          "amount": 29,
+          "amount": 2905,
           "description": "Unclog Toliet",
           "id": "5",
           "quantity": "1"
@@ -89,13 +89,13 @@
       "invoiceStatus": "paid",
       "lineItems": [
         {
-          "amount": 500,
+          "amount": 50000,
           "description": "light fixtures",
           "id": "5",
           "quantity": "10"
         },
         {
-          "amount": 2900,
+          "amount": 290099,
           "description": "Charger",
           "id": "6",
           "quantity": "1"

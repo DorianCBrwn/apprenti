@@ -4,6 +4,7 @@
   import Tag from "$lib/components/Tag.svelte";
   import { centsToDollars, sumLineItems } from "$lib/utils/moneyHelper";
   import { formatDate, isLate } from "$lib/utils/dateHelpers";
+  import AdditionalOptions from "$lib/components/AdditionalOptions.svelte";
   export let invoice: Invoice;
 
   const getInvoiceLabel = () => {
@@ -17,6 +18,13 @@
       return "paid";
     }
   };
+
+  export let options: {
+    label: string;
+    icons?: string;
+    disabled: boolean;
+    onClick: () => void;
+  }[];
 </script>
 
 <div
@@ -43,8 +51,9 @@
   <div class="center viewButton hidden text-sm lg:block lg:text-lg">
     <a href="#" class="hover:text-primary"><ViewIcon /></a>
   </div>
-  <div class="center moreButton hidden text-sm lg:block lg:text-lg">
+  <div class="relative center moreButton hidden text-sm lg:block lg:text-lg">
     <button class="hover:text-primary"><MoreIcon /></button>
+    <AdditionalOptions />
   </div>
 </div>
 
