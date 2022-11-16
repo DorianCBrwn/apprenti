@@ -17,7 +17,6 @@ export const sumLineItems = (lineItems: lineItem[] | undefined): number => {
  * @returns {string}
  */
 export const centsToDollars = (cents: number): string => {
-  console.log(cents);
   const dollars = cents / 100;
   const addDecimals = formatDecimals(dollars);
   return addCommaSeparator(addDecimals);

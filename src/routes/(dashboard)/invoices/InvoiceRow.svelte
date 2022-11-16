@@ -1,30 +1,45 @@
 <script lang="ts">
   import MoreIcon from "$lib/components/icons/MoreIcon.svelte";
   import ViewIcon from "$lib/components/icons/ViewIcon.svelte";
+  import TrashIcon from "$lib/components/icons/TrashIcon.svelte";
+  import SendIcon from "$lib/components/icons/SendIcon.svelte";
+  import EditIcon from "$lib/components/icons/EditIcon.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import { centsToDollars, sumLineItems } from "$lib/utils/moneyHelper";
   import { formatDate, isLate } from "$lib/utils/dateHelpers";
   import AdditionalOptions from "$lib/components/AdditionalOptions.svelte";
+
   export let invoice: Invoice;
+
+  const handleDelete = () => {
+    console.log("handle deleting");
+  };
+
+  const handleEdit = () => {
+    console.log("handle editing");
+  };
+
+  const handleSend = () => {
+    console.log("handle send");
+  };
 
   const getInvoiceLabel = () => {
     if (invoice.invoiceStatus === "draft") {
       return "draft";
     } else if (invoice.invoiceStatus === "sent" && !isLate(invoice.dueDate)) {
+      isOptionDisabled = true;
       return "sent";
-    } else if (invoice.invoiceStatus === "sent" && isLate(invoice.dueDate)) {
+    } else if (invoice.invoiceStatus === "late" && isLate(invoice.dueDate)) {
+      isOptionDisabled = true;
       return "late";
     } else if (invoice.invoiceStatus === "paid") {
+      isOptionDisabled = true;
       return "paid";
     }
   };
 
-  export let options: {
-    label: string;
-    icons?: string;
-    disabled: boolean;
-    onClick: () => void;
-  }[];
+  let isAdditionalOptionsShowing = false;
+  let isOptionDisabled = false;
 </script>
 
 <div
@@ -48,12 +63,43 @@
   >
     {invoice.repairDescription}
   </div>
-  <div class="center viewButton hidden text-sm lg:block lg:text-lg">
+  <div class="center viewButton hidden text-sm lg:flex lg:text-lg">
     <a href="#" class="hover:text-primary"><ViewIcon /></a>
   </div>
-  <div class="relative center moreButton hidden text-sm lg:block lg:text-lg">
-    <button class="hover:text-primary"><MoreIcon /></button>
-    <AdditionalOptions />
+  <div class="relative center moreButton hidden text-sm lg:flex lg:text-lg">
+    <button
+      class="hover:text-primary"
+      on:click={() => {
+        console.log("Button Clicked");
+
+        isAdditionalOptionsShowing = !isAdditionalOptionsShowing;
+      }}><MoreIcon /></button
+    >
+
+    {#if isAdditionalOptionsShowing}
+      <AdditionalOptions
+        options={[
+          {
+            label: "Edit",
+            icon: EditIcon,
+            disabled: isOptionDisabled,
+            onClick: handleEdit,
+          },
+          {
+            label: "Delete",
+            icon: TrashIcon,
+            disabled: false,
+            onClick: handleDelete,
+          },
+          {
+            label: "Send",
+            icon: SendIcon,
+            disabled: isOptionDisabled,
+            onClick: handleSend,
+          },
+        ]}
+      />
+    {/if}
   </div>
 </div>
 

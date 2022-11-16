@@ -8,8 +8,6 @@
 
   onMount(() => {
     loadInvoices();
-
-    console.log($invoices);
   });
 </script>
 
@@ -18,7 +16,7 @@
 </svelte:head>
 
 <div
-  class=" mb-7 flex  flex-col-reverse items-start justify-between gap-y-6 md:flex-row md:items-center md:gap-y-4 lg:mb-16 "
+  class=" mb-7 flex  flex-col-reverse items-start justify-between gap-y-6  md:flex-row md:items-center md:gap-y-4 lg:mb-16 "
 >
   <!-- Search Field  -->
   <Search />
@@ -46,9 +44,12 @@
   </div>
 
   <!-- Repairs -->
-  {#each $invoices as invoice}
-    <InvoiceRow {invoice} />
-  {/each}
+
+  <div class="flex flex-col-reverse">
+    {#each $invoices as invoice}
+      <InvoiceRow {invoice} />
+    {/each}
+  </div>
 </div>
 <CircledAmount label="Total" amount={centsToDollars(sumInvoices($invoices))} />
 
