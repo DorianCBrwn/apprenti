@@ -8,7 +8,11 @@ const config = {
       handwriting: ["Kalam", "cursive"],
     },
     extend: {
-      backgroundImage: { circle: "url('/circle.svg')" },
+      backgroundImage: {
+        circle: "url('/circle.svg')",
+        arrowRightUp: "url('/arrowRight.svg')",
+        arrowLeftUp: "url('/arrowLeft.svg')",
+      },
       borderWidth: {
         1: "1px",
       },

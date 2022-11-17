@@ -66,7 +66,7 @@
   <div class="center viewButton hidden text-sm lg:flex lg:text-lg">
     <a href="#" class="hover:text-primary"><ViewIcon /></a>
   </div>
-  <div class="relative center moreButton hidden text-sm lg:flex lg:text-lg">
+  <div class="center moreButton relative hidden text-sm lg:flex lg:text-lg">
     <button
       class="hover:text-primary"
       on:click={() => {
