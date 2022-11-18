@@ -28,7 +28,7 @@
           on:click={() => dispatch("close")}
           class="right-4 top-4 absolute text-primary hover:text-primary-focus"
         >
-          <Cancel />
+          <Cancel fill={"currentColor"} />
         </button>
         <slot><!-- optional fallback --></slot>
       </div>
