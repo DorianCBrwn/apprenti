@@ -8,11 +8,13 @@
   import { centsToDollars, sumLineItems } from "$lib/utils/moneyHelper";
   import { formatDate, isLate } from "$lib/utils/dateHelpers";
   import AdditionalOptions from "$lib/components/AdditionalOptions.svelte";
+  import Modal from "$lib/components/Modal.svelte";
+  import { deleteInvoice } from "$lib/stores/InvoiceStore";
 
   export let invoice: Invoice;
 
   const handleDelete = () => {
-    console.log("handle deleting");
+    isModalShowing = true;
   };
 
   const handleEdit = () => {
@@ -40,6 +42,7 @@
 
   let isAdditionalOptionsShowing = false;
   let isOptionDisabled = false;
+  let isModalShowing = false;
 </script>
 
 <div
@@ -70,8 +73,6 @@
     <button
       class="hover:text-primary"
       on:click={() => {
-        console.log("Button Clicked");
-
         isAdditionalOptionsShowing = !isAdditionalOptionsShowing;
       }}><MoreIcon /></button
     >
@@ -102,6 +103,32 @@
     {/if}
   </div>
 </div>
+
+<Modal isVisible={isModalShowing} on:close={() => (isModalShowing = false)}>
+  <div
+    class="flex flex-col items-center justify-between gap-6 h-full min-h-[176px]"
+  >
+    <div class="text-center text-xl font-bold text-primary-focus">
+      Are you sure you want to delete this invoice to
+      <span class="text-secondary">{invoice.vendor.name}</span> for
+      <span class="text-secondary">
+        ${centsToDollars(sumLineItems(invoice.lineItems))}
+      </span>
+    </div>
+    <div class="flex justify-center w-full gap-6">
+      <button class="btn btn-primary" on:click={() => (isModalShowing = false)}
+        >Cancel</button
+      >
+      <button
+        class="btn btn-error hover:bg-red-600"
+        on:click={() => {
+          deleteInvoice(invoice);
+          isModalShowing = false;
+        }}>Yes, Delete It</button
+      >
+    </div>
+  </div>
+</Modal>
 
 <!-- markup (zero or more items) goes here -->
 <style lang="postcss">
