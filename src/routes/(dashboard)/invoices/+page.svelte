@@ -7,10 +7,13 @@
   import InvoiceRow from "./InvoiceRow.svelte";
   import BlankState from "./BlankState.svelte";
   import InvoiceTableHeader from "./InvoiceTableHeader.svelte";
+  import SlidePanel from "$lib/components/SlidePanel.svelte";
 
   onMount(() => {
     loadInvoices();
   });
+
+  let isInvoiceFormShowing = false;
 </script>
 
 <svelte:head>
@@ -31,7 +34,7 @@
   <div>
     <button
       class="btn btn-primary btn-sm translate-y-0 whitespace-nowrap transition-all  hover:-translate-y-2 md:btn-md lg:btn-lg"
-      >&plus; Invoice</button
+      on:click={() => (isInvoiceFormShowing = true)}>&plus; Invoice</button
     >
   </div>
 </div>
@@ -56,3 +59,8 @@
     />
   {/if}
 </div>
+
+{#if isInvoiceFormShowing}
+  <SlidePanel bind:isVisible={isInvoiceFormShowing}>MY Slide Panel</SlidePanel>
+  <!-- content here -->
+{/if}
