@@ -11,7 +11,11 @@ const config = {
       backgroundImage: {
         circle: "url('/circle.svg')",
         arrowRightUp: "url('/arrowRight.svg')",
-        arrowLeftUp: "url('/arrowLeft.svg')"
+        arrowLeftUp: "url('/arrowLeft.svg')",
+        chevronDown: "url('/cheron-down.svg')"
+      },
+      backgroundPosition: {
+        "right-center": "97% center"
       },
       borderWidth: {
         1: "1px"
